@@ -81,7 +81,7 @@ class OTAUpdater:
         print('Checking version... ')
         print('\tCurrent version: ', current_version)
         print('\tLatest version: ', latest_version)
-        if latest_version > current_version:
+        if latest_version != current_version:
             print('Updating...')
             os.mkdir(self.modulepath('next'))
             self.download_all_files(self.github_repo + '/contents/' + self.main_dir, latest_version)
